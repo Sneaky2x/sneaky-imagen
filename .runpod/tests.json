@@ -1,0 +1,22 @@
+{
+  "tests": [
+    {
+      "name": "basic_generation",
+      "input": {
+        "prompt": "a cyberpunk cat, 8k, detailed",
+        "steps": 10
+      },
+      "timeout": 60000
+    }
+  ],
+  "config": {
+    "gpuTypeId": "NVIDIA A10G",
+    "gpuCount": 1,
+    "env": [
+      {
+        "key": "MODEL_TYPE",
+        "value": "SDXL"
+      }
+    ]
+  }
+}

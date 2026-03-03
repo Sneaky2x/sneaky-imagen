@@ -1,0 +1,15 @@
+torch==2.1.0
+torchvision==0.16.0
+torchaudio==2.1.0
+# Extra index url for torch will be handled in Dockerfile or pip command
+transformers==4.45.0
+diffusers==0.31.0
+accelerate==0.34.2
+safetensors
+sentencepiece
+protobuf
+wget
+huggingface_hub
+peft
+requests
+runpod

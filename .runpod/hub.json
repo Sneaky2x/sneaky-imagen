@@ -1,0 +1,36 @@
+{
+  "title": "Sneaky Imagen",
+  "description": "High-performance serverless worker for Flux and SDXL image generation with custom LoRA support.",
+  "type": "serverless",
+  "category": "image",
+  "config": {
+    "runsOn": "GPU",
+    "containerDiskInGb": 20,
+    "gpuCount": 1,
+    "env": [
+      {
+        "key": "MODEL_TYPE",
+        "input": {
+          "name": "Model Type",
+          "type": "string",
+          "description": "Select the base model architecture (SDXL or Flux)",
+          "options": [
+            {"label": "SDXL", "value": "SDXL"},
+            {"label": "Flux", "value": "Flux"}
+          ],
+          "default": "SDXL"
+        }
+      },
+      {
+        "key": "CIVITAI_TOKEN",
+        "input": {
+          "name": "CivitAI Token",
+          "type": "string",
+          "description": "API Token for downloading restricted models from CivitAI (Optional)",
+          "default": "",
+          "advanced": true
+        }
+      }
+    ]
+  }
+}
