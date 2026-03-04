@@ -7,6 +7,8 @@
     "steps": 25,
     "cfg_scale": 7.0,
     "seed": 42,
-    "scheduler": "Euler a"
+    "scheduler": "Euler a",
+    "output_format": "JPEG",
+    "output_quality": 90
   }
 }

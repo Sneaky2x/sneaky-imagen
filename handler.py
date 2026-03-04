@@ -127,6 +127,8 @@ def handler(job):
     seed = job_input.get("seed", None)
     scheduler_type = job_input.get("scheduler", "Euler a")
     clip_skip = job_input.get("clip_skip", 2) # SDXL only
+    output_format = job_input.get("output_format", "JPEG").upper()  # JPEG or PNG
+    output_quality = int(job_input.get("output_quality", 90))  # JPEG quality 1-95
 
     # Configure Scheduler
     if scheduler_type == "Euler a":
@@ -167,14 +169,21 @@ def handler(job):
         
         # Convert to base64
         buffered = io.BytesIO()
-        image.save(buffered, format="PNG")
+        if output_format == "PNG":
+            image.save(buffered, format="PNG")
+        else:
+            # JPEG is much smaller; convert RGBA->RGB if needed
+            if image.mode in ("RGBA", "P"):
+                image = image.convert("RGB")
+            image.save(buffered, format="JPEG", quality=output_quality)
         img_str = base64.b64encode(buffered.getvalue()).decode("utf-8")
-        
+
         return {
             "image": img_str,
+            "image_format": output_format.lower(),
             "seed": seed,
             "params": {
-                "width": width, 
+                "width": width,
                 "height": height,
                 "steps": steps,
                 "cfg": cfg_scale,

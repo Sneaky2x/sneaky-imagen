@@ -4,7 +4,11 @@
       "name": "basic_generation",
       "input": {
         "prompt": "a cyberpunk cat, 8k, detailed",
-        "steps": 10
+        "width": 512,
+        "height": 512,
+        "steps": 5,
+        "output_format": "JPEG",
+        "output_quality": 75
       },
       "timeout": 120000
     }
