@@ -1,5 +1,6 @@
 # Sneaky Imagen Serverless Worker
 
+[![Runpod](https://api.runpod.io/badge/Sneaky2x/sneaky-imagen)](https://console.runpod.io/hub/Sneaky2x/sneaky-imagen)
 This worker is a custom serverless endpoint for RunPod designed for high-performance image generation.
 
 ## Directory Structure
@@ -15,9 +16,9 @@ This worker is a custom serverless endpoint for RunPod designed for high-perform
    Edit `builder.py` to change the `CHECKPOINT_URL`, `LORA_URLS`, or `VAE_URL` if you want to bake different models into the image.
    
    *Current defaults:*
-   - Checkpoint: CivitAI Model ID 2255476 (SDXL)
-   - LoRA: CivitAI Model ID 1326524
-   - VAE: CivitAI Model ID 333245
+   - Checkpoint: CivitAI Model ID 133005 (SDXL)
+   - LoRA: CivitAI Model ID 122359
+   - VAE: CivitAI Model ID 296576
 
 2. **Build the Image**:
    You need to build this Docker image and push it to a registry (Docker Hub, GHCR, etc.) that RunPod can access.

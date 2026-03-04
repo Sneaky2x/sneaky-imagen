@@ -1,0 +1,12 @@
+{
+  "input": {
+    "prompt": "a futuristic city with flying cars, neon lights, 8k, detailed",
+    "negative_prompt": "blurry, low quality",
+    "width": 1024,
+    "height": 1024,
+    "steps": 25,
+    "cfg_scale": 7.0,
+    "seed": 42,
+    "scheduler": "Euler a"
+  }
+}
